@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#intro">Intro</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="intro">
+            <img src="https://placehold.co/640x640" alt="Photo of me">
+            <div class="right">
+                <h1>[redacted name]</h1>
+                <h4>About Me</h4>
+                <p>I'm an avid software developer who has been coding for a few years. At first I used Scratch, before moving onto Unity and C#. Since then, I've expanded my knowledge to Lua, Rust, HTML, CSS, JavaScript, PHP, and SQL.</p>
+            </div>
+        </section>
+        <section id="projects">
+            <h1>Projects</h1>
+            <div class="grid">
+                <a class="card new" href="https://github.com/techmino-hub/techmino-hub-source-code">
+                    <img src="img/th.png" alt="Techmino Hub screenshot">
+                    <div class="lang">Vue, TS</div>
+                    <div class="text">
+                        <h3>Techmino Hub</h3>
+                        <p>A stacker game website.</p>
+                    </div>
+                </a>
+                <a class="card new" href="https://github.com/Not-A-Normal-Robot/bignum">
+                    <img src="img/bignum.png" alt="A really, really big number.">
+                    <div class="lang">Rust</div>
+                    <div class="text">
+                        <h3>BigNum</h3>
+                        <p>A big number library.</p>
+                    </div>
+                </a>
+                <a class="card new" href="https://github.com/Not-A-Normal-Robot/keplerian-rust">
+                    <img src="img/keplerian-rust.png" alt="Diagram of Keplerian orbital elements">
+                    <div class="lang">Rust</div>
+                    <div class="text">
+                        <h3>Keplerian-rust</h3>
+                        <p>A newer orbital simulator.</p>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/Not-A-Normal-Robot/KeplerianOrbitalMechanics">
+                    <img src="img/keplerian-orbital-mechanics.png" alt="Diagram of different Keplerian orbits">
+                    <div class="lang">C#</div>
+                    <div class="text">
+                        <h3>Keplerian Orbital Mechanics</h3>
+                        <p>An orbital simulator.</p>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/techmino-hub/techmino-hub.github.io">
+                    <img src="img/thl.png" alt="Techmino Hub Legacy screenshot">
+                    <div class="lang">HTML, CSS, JS</div>
+                    <div class="text">
+                        <h3>Techmino Hub Legacy</h3>
+                        <p>An old stacker game website.</p>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/Not-A-Normal-Robot/retroblocks">
+                    <img src="img/retroblocks.png" alt="Retroblocks screenshot">
+                    <div class="lang">C#</div>
+                    <div class="text">
+                        <h3>Retroblocks</h3>
+                        <p>A cmd-based stacker game.</p>
+                    </div>
+                </a>
+                <a class="card" href="https://github.com/Techmino-Challenges/Techmino-Challenges">
+                    <img src="img/techmino.png" alt="Techmino screenshot">
+                    <div class="lang">Lua</div>
+                    <div class="text">
+                        <h3>Techmino Challenges</h3>
+                        <p>A stacker game mod.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required maxlength="64">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="john.doe@example.com" required maxlength="64">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message" required maxlength="2048"></textarea>
+                <button type="submit">Submit message</button>
+            </form>
+        </section>
+        <footer>
+            <em>Copyright 2024 [redacted name]</em>
+        </footer>
+    </main>
+</body>
+</html>
