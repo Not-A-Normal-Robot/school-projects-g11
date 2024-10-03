@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Length Conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js" async defer></script>
+    <main>
+        <h1>Length Conversion</h1>
+        <div class="row">
+            <div class="col">
+                <input
+                    id="lhs-num"
+                    value="0"
+                    placeholder="Enter a value..."
+                    pattern="-?[0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?"
+                >
+                <select id="lhs-unit">
+                    <option value="mm">
+                        Millimeters
+                    </option>
+                    <option value="cm">
+                        Centimeters
+                    </option>
+                    <option value="m">
+                        Meters
+                    </option>
+                    <option value="km" selected>
+                        Kilometers
+                    </option>
+                    <option value="in">
+                        Inches
+                    </option>
+                    <option value="ft">
+                        Feet
+                    </option>
+                    <option value="mi">
+                        Miles
+                    </option>
+                </select>
+            </div>
+            <button id="swap">=</button>
+            <div class="col">
+                <input
+                    id="rhs-num"
+                    value="0"
+                    placeholder="Enter a value..."
+                    pattern="-?[0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?"
+                >
+                <select id="rhs-unit">
+                    <option value="mm">
+                        Millimeters
+                    </option>
+                    <option value="cm">
+                        Centimeters
+                    </option>
+                    <option value="m">
+                        Meters
+                    </option>
+                    <option value="km">
+                        Kilometers
+                    </option>
+                    <option value="in">
+                        Inches
+                    </option>
+                    <option value="ft">
+                        Feet
+                    </option>
+                    <option value="mi" selected>
+                        Miles
+                    </option>
+                </select>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.content {
+    width: 40ch;
+    background: aquamarine;
+    border: 2px dotted black;
+    margin-inline: auto;
+    padding-inline: 10px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.content:nth-child(1) {
+    background: #f8d7da;
+    order: 2;
+}
+
+.content:nth-child(2) {
+    background: #cce5ff;
+    order: 3;
+}
+
+
+.grow-demo {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.grow-demo > *, .shrink-demo > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 5ch;
+    height: 5ch;
+    padding-inline: 1.5ch;
+    border: 1px solid black;
+    border-radius: 1ch;
+    text-align: center;
+}
+
+.grow-demo > .small {
+    flex-grow: 1;
+}
+
+.grow-demo > .large {
+    flex-grow: 3;
+}
+
+.shrink-demo {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.shrink-demo > * {
+    flex-basis: 60ch;
+}
+
+.shrink-demo > .large {
+    flex-shrink: 1;
+}
+
+.shrink-demo > .small {
+    flex-shrink: 2;
+}

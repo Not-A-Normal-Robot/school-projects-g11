@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 1em;
+    gap: 1em;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    font-family: monospace;
+    font-size: 1em;
+    resize: none;
+    border: 0.1em solid white;
+    background-color: #111;
+    color: white;
+}
+
+#out {
+    flex-grow: 1;
+    word-break: break-all;
+    border: 0.1em solid white;
+    overflow: auto;
+}
+
+textarea#in {
+    min-height: 1em;
+    height: fit-content;
+    max-height: 7.3em;
+    flex-shrink: 0;
+}
+
+#out .entry {
+    padding-inline: 2ch;
+    background-color: #111;
+    border-block: 0.1em solid #fff2;
+    font-family: monospace;
+}
+
+#out .cmd {
+    color: lightgrey;
+    font-weight: thin;
+}
+
+#out .cmd::before {
+    content: '> ';
+    color: grey;
+}
+
+#out .res {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+#out .res.number, #out .res.bigint {
+    color: greenyellow;
+}
+
+#out .res.string, #out .res.symbol {
+    color: orangered;
+}
+
+#out .res.string::before, #out .res.string::after {
+    content: '"';
+}
+
+#out .res.object {
+    color: cyan;
+}
+
+#out .res.function {
+    color: yellow;
+}
+
+#out .res.undefined, #out .res.null {
+    color: grey;
+}
+
+#out .res.err {
+    color: red;
+}
+
+#out .res.err::before {
+    content: "E: ";
+}

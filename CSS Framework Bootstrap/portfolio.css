@@ -1,0 +1,86 @@
+:root {
+    scroll-padding-top: 2em;
+    color-scheme: dark light;
+}
+
+section#projects .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+}
+
+section#projects .grid > * {
+    min-height: 15em;
+    box-shadow: none;
+    transition: box-shadow 250ms;
+}
+
+section#projects .grid > *:hover {
+    box-shadow: 0 0 1ch white;
+}
+
+section#projects .grid > :not(.new) {
+    --bs-primary-rgb: var(--bs-secondary-rgb);
+    --bs-primary: rgb(var(--bs-primary-rgb));
+}
+
+section#projects .grid > .new {
+    box-shadow: 0 0 0.75ch aquamarine;
+}
+
+section#projects .grid > .new:hover {
+    box-shadow: 0 0 2ch aquamarine;
+}
+
+section#projects .grid > .new .text::before {
+    content: "NEW";
+    width: fit-content;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: var(--bs-light);
+    background-color: var(--bs-primary);
+    padding: 0.175em 0.75ch;
+}
+
+section#projects .grid .lang {
+    top: 1em;
+    right: -1ch;
+}
+
+section#projects .grid img {
+    z-index: -1;
+}
+
+section#projects .grid .text {
+    background: linear-gradient(to bottom, #0000 0, #0009 2em, #000f);
+}
+
+section#faq {
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+section#faq .accordion {
+    --bs-accordion-active-bg: #031633;
+    --bs-accordion-active-color: #6ea8fe;
+    --bs-accordion-btn-color: var(--bs-light);
+    --bs-accordion-color: var(--bs-light);
+    --bs-accordion-bg: #212529;
+}
+
+section#faq .accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236ea8fe'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+section#contact {
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+section#contact textarea {
+    resize: none;
+    height: 5em;
+}
+
+footer {
+    background: linear-gradient(to bottom, #0000 0, #000a 2em, #000f);
+}

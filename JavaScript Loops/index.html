@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loop Demonstration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js" async defer></script>
+    <main>
+        <h1>
+            Suhu Harian
+        </h1>
+        <div class="row">
+            <label for="entries">Data points</label>
+            <input
+                type="number"
+                name="entries"
+                id="entries"
+                min="1"
+                max="1000"
+                value="1"
+                placeholder="1"
+                required
+            >
+        </div>
+        <hr>
+        <div class="col" id="datacol"></div>
+        <button type="button" id="log">
+            Log
+        </button>
+        <i>
+            See console to see the logged result.
+        </i>
+    </main>
+</body>
+</html>

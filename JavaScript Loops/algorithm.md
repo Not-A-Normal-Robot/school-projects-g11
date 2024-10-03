@@ -1,0 +1,16 @@
+- Get some HTML elements based on ID:
+    - `entries` of tag `<input>`
+    - `datacol` of tag `<div>`
+    - `log` of tag `<button>`
+- Throw an error early if the elements are not found
+- Define variables:
+    - `numEntries` of type `number`
+    - `data` of type `number[]`
+- Define functions:
+    - `setNumEntries` for setting the number of entries and updating the HTML
+    - `getDataInputElement` for getting the row containing a data input element
+    - `getStats` for getting the extrema, quartiles, and standard deviation of the inputted data
+    - `logData` for logging the inputted data and the stats into the console
+- Listen to events:
+    - Event `change` for `numEntriesInput` to call `setNumEntries`
+    - Event `click` for `logButton` to call `logData`

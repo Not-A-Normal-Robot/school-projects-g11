@@ -1,0 +1,41 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: 100vh;
+    margin-inline: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+}
+
+input {
+    background-color: black;
+    color: white;
+    border: 0.125em solid white;
+    border-radius: 0.5em;
+    padding: 0.25em 1ch;
+    font-size: 1.5em;
+    margin-block: 2em;
+}
+
+output {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.error {
+    color: red;
+}

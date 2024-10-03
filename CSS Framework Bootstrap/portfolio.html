@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Landing Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body class="bg-dark text-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">My Portfolio</a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto text-center row-gap-2 column-gap-2 px-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="my-5" id="hero">
+        <div class="container">
+            <div class="hero-box d-flex align-items-center flex-lg-row flex-column-reverse gap-5">
+                <img class="w-25 d-none d-lg-block rounded-5" src="https://placehold.co/640x640" alt="Avatar">
+                <div class="box flex-grow-1">
+                    <h1 class="fw-bold"><span class="text-primary text-decoration-underline">Firstname</span> Lastname</h1>
+                    <p>I'm a software engineer, graphic designer, and long-time fan of all things IT-related.</p>
+                    <a href="#projects"><button class="btn btn-primary" type="button">My Projects</button></a>
+                    <a href="#contact"><button class="btn btn-outline-light" type="button">Contact Me</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container mx-auto">
+            <h2 class="text-center fw-bold mb-4">About <span class="text-primary text-decoration-underline">Me</span></h2>
+            <p>I'm an avid software developer who has been coding for a long time. At first I used Scratch, before moving onto <strong>Unity</strong> and <strong>C#</strong>. Since then, I've expanded my knowledge to <strong>Lua</strong>, <strong>Rust</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>SQL</strong>.</p>
+            <p>Along the way, I picked up various skills such as <strong>networking basics</strong>, <strong>dynamic programming</strong>, <strong>graphic design</strong>, and <strong>user interface design</strong>. I also enjoy creating posters for fun every once in a while.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">My <span class="text-decoration-underline text-primary">Projects</span></h2>
+            <div class="grid gap-3">
+                <a href="https://github.com/techmino-hub/techmino-hub-source-code" class="new text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/th.png" alt="Techmino Hub screenshot">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Techmino Hub</h4>
+                        <i>A stacker game website.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">Vue, TS</div>
+                </a>
+                <a href="https://github.com/Not-A-Normal-Robot/bignum" class="new text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/bignum.png" alt="A really big number">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">BigNum</h4>
+                        <i>A big number library.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">Rust</div>
+                </a>
+                <a href="https://github.com/Not-A-Normal-Robot/keplerian-rust" class="new text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/keplerian-rust.png" alt="Diagram of Keplerian orbital elements">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Keplerian-rust</h4>
+                        <i>A newer orbital simulator.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">Rust</div>
+                </a>
+                <a href="https://github.com/Not-A-Normal-Robot/KeplerianOrbitalMechanics" class="text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/keplerian-orbital-mechanics.png" alt="Diagram of different Keplerian orbits">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Keplerian Orbital Mechanics</h4>
+                        <i>An orbital simulator.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">C#</div>
+                </a>
+                <a href="https://github.com/techmino-hub/techmino-hub.github.io" class="text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/thl.png" alt="Techmino Hub Legacy screenshot">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Techmino Hub Legacy</h4>
+                        <i>An old stacker game website.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">HTML/CSS/JS</div>
+                </a>
+                <a href="https://github.com/Not-A-Normal-Robot/retroblocks" class="text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/retroblocks.png" alt="Retroblocks screenshot">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Retroblocks</h4>
+                        <i>A cmd-based stacker game.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">C#</div>
+                </a>
+                <a href="https://github.com/Techmino-Challenges/Techmino-Challenges" class="text-decoration-none position-relative d-flex flex-column justify-content-end text-light border border-primary border-2 mw-100">
+                    <img class="position-absolute w-100 h-100 object-fit-cover" src="img/techmino.png" alt="Techmino Challenges icon">
+                    <div class="text p-3 pt-4 d-flex flex-column gap-1">
+                        <h4 class="fw-bold m-0">Techmino Challenges</h4>
+                        <i>A stacker game mod.</i>
+                    </div>
+                    <div class="lang position-absolute bg-primary px-2 pe-3 py-1">C#</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 container d-flex flex-column gap-3 align-items-stretch">
+        <h2 class="fw-bold text-center mb-4">Frequently-Asked <span class="text-decoration-underline text-primary">Questions</span></h2>
+        <div class="accordion accordion-flush border" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    What's your nationality?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I'm <strong>Indonesian</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    What is your name?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">My name is <strong>Insert Name Here</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        What is your address? Where do you live?
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I live in <strong>Indonesia</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        What's the timezone in your place of residence?
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I live in the <strong>UTC+7</strong> timezone.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        What are your pronouns?
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">My pronouns are <strong>he/him</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        What is your gender?
+                    </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I identify as <strong>male</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                        How old are you?
+                    </button>
+                </h2>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">My birthday is on the <strong>20th of May, 2008</strong>. At the time of writing, I am currently <strong>16 years old</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                        How can I contact you?
+                    </button>
+                </h2>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">You can contact me on the <a href="#contact">contact section</a> of this page.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                        Why do you like programming?
+                    </button>
+                </h2>
+                <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I got into computer games very early in my life, and has since liked everything related to IT, such as cybersecurity, networking, and yes, programming and software development.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                        What's your favorite game?
+                    </button>
+                </h2>
+                <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I really like puzzle games, so my favorites are <strong>Kerbal Space Program, Tetris, and Solitaire</strong>.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                        Will you ever finish qRPS?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">I haven't really been motivated to work on it, and I'm not sure, but it's really looking like it's <strong>never going to be finished</strong>.</div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center"><span class="text-primary text-decoration-underline">Contact</span> Me</h2>
+            <form class="d-flex flex-column gap-3" action="index.html">
+                <div class="d-flex flex-column gap-2">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="name" placeholder="john.doe@gmail.com" required>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                    <label for="msg">Message</label>
+                    <textarea id="msg" name="msg" maxlength="2048" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="pt-5 text-center text-secondary d-flex justify-content-center gap-5">
+        <span>Made with Bootstrap v5.3</span>
+        <span>&copy; 2024 [redacted name]</span>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+:root {
+    color-scheme: dark light;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+    font-family: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1em;
+    height: 100vh; height: 100dvh;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-block-start: 0;
+}
+
+output {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 1px solid white;
+    overflow-y: auto;
+}
+
+output p {
+    margin: 0;
+    padding: 1em 2ch;
+    border-block: 0.1em solid #fff2;
+}
+
+output .warn {
+    background-color: #ff12;
+    color: #ff4;
+    border-color: currentColor;
+}
+
+output .warn:before {
+    content: "[W]";
+    font-weight: bold;
+}
+
+output .error {
+    background-color: #f113;
+    color: #f44;
+    border-color: currentColor;
+}
+
+output .error:before {
+    content: "[E]";
+    font-weight: bold;
+}

@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: fit-content;
+  height: 100vh;
+  grid-template-columns: 15em auto;
+  grid-template-rows: 4em auto;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  gap: 1em;
+}
+
+@media (max-width: 400px) {
+  .layout {
+    grid-template-columns: 100%;
+    grid-template-rows: 4em auto auto;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+  .layout > nav {
+    position: fixed;
+    z-index: 1;
+    inset: auto 0 0 0;
+    padding: 0 !important;
+  }
+  .layout > nav menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding-block: 2em 0;
+    padding-inline: 0;
+    font-size: 0.8em;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  .layout > nav menu a {
+    padding-block: 2em 0;
+  }
+  .layout > main {
+    padding: 1em !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .layout {
+    grid-template-columns: 4em auto;
+  }
+  .layout > nav {
+    padding: 0 !important;
+    font-size: 0.6em;
+  }
+  .layout > nav > menu {
+    padding: 0 !important;
+    list-style-type: none;
+    text-align: center;
+  }
+  .layout > nav > menu > li > a, .layout > nav > menu > li {
+    padding-block-start: 3em;
+  }
+
+  .layout > main {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.layout > * {
+  padding: 1em 3em;
+}
+
+.layout > header {
+  grid-area: header;
+  text-align: center;
+  vertical-align: middle;
+  background-color: antiquewhite;
+}
+.layout > nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-wrap: balance;
+  padding: 0.5em 1em !important;
+  background-color: aquamarine;
+}
+.layout > main {
+  position: relative;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3em;
+  row-gap: 1em;
+  padding: 1em;
+  background-color: lavender;
+}
+.layout > footer {
+  grid-area: footer;
+}
+
+.video {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #0003;
+  padding: 20px;
+}
+.video:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 130px;
+  background-color: #8883;
+  margin-block-end: 1em;
+}
+.video:after {
+  content: "Video";
+  display: block;
+  width: 100%;
+  color: black;
+}
