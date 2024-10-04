@@ -92,32 +92,35 @@
             <h2 class="text-danger fw-bold">This page will not work properly without JavaScript enabled.</h2>
         </noscript>
 
-        <div class="card">
-            <div class="card-header">
-                <h4 class="mt-2">Services List</h4>
-            </div>
-            <div class="card-body">
-                <table class="table" id="services-table">
-                    <tr>
-                        <td>Loading...</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="card my-5">
-            <div class="card-header">
-                <h4 class="mt-2">Add new service</h4>
-            </div>
-            <div class="card-body">
-                <form id="service-form">
-                    <div class="mb-3">
-                        <label for="inputName" class="form-label">Service Name</label>
-                        <input type="text" class="form-control" name="name" id="inputName" maxlength="255" required>
+        <div class="row row-gap-2 column-gap-3 flex-xl-nowrap mx-2">
+            <div class="card col-xl-8 g-0">
+                <div class="card-header">
+                    <h4 class="mt-2">Services List</h4>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="w-100 overflow-auto">
+                        <table class="table table-responsive" id="services-table">
+                            <tr>
+                                <td>Loading...</td>
+                            </tr>
+                        </table>
                     </div>
-                    <input type="hidden" name="status" value="Up">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
+            </div>
+            <div class="card col-xl-4 g-0 my-5 my-xl-0">
+                <div class="card-header">
+                    <h4 class="mt-2">Add new service</h4>
+                </div>
+                <div class="card-body">
+                    <form id="service-form">
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Service Name</label>
+                            <input type="text" class="form-control" name="name" id="inputName" maxlength="255" required>
+                        </div>
+                        <input type="hidden" name="status" value="Up">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
