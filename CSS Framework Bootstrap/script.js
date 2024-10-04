@@ -355,7 +355,7 @@ async function main() {
     const serviceForm = document.getElementById('service-form');
 
     /** @type {HTMLFormElement | null} */
-    const productForm = document.getElementById('product-form');
+    const projectForm = document.getElementById('project-form');
 
     if(serviceForm) {
         serviceForm.addEventListener('submit', (e) => {
@@ -376,14 +376,15 @@ async function main() {
         });
     }
 
-    if(productForm) {
-        productForm.addEventListener('submit', (e) => {
+    if(projectForm) {
+        projectForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const formData = new FormData(productForm);
+            const formData = new FormData(projectForm);
 
             const name = formData.get('name');
-            const serviceUsed = services[parseInt(formData.get('service'))].name;
+            const serviceUsed = services[Number(formData.get('service'))].name;
+
 
             projects.push({
                 name,
