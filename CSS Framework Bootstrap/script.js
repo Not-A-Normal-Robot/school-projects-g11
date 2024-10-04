@@ -3,18 +3,84 @@
 const SERVICES_STORAGE_KEY = 'services';
 const PROJECTS_STORAGE_KEY = 'projects';
 
+function createInfoIcon() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("fill", "currentColor");
+    svg.classList.add("bi", "bi-info-circle-fill");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2");
+
+    svg.appendChild(path);
+
+    return svg;
+}
+function createStartIcon() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("fill", "currentColor");
+    svg.classList.add("bi", "bi-play-fill");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393");
+
+    svg.appendChild(path);
+
+    return svg;
+}
+function createStopIcon() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("fill", "currentColor");
+    svg.classList.add("bi", "bi-stop-fill");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5");
+
+    svg.appendChild(path);
+
+    return svg;
+}
+function createTrashIcon() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("fill", "currentColor");
+    svg.classList.add("bi", "bi-trash-fill");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0");
+    
+    svg.appendChild(path);
+
+    return svg;
+}
 
 /**
  * @typedef { {
  *  "name": string;
  *  "status": "Up" | "Down";
+ *  "description": string;
  * } } Service
  * 
  * @typedef { {
  *  "name": string;
  *  "serviceUsed": string;
  *  "status": "Up" | "Down";
- * }} Project
+ *  "description": string;
+ * } } Project
  */
 
 /** @returns {Service[]} */
@@ -23,19 +89,23 @@ function getServices(){
     let services = [
         {
             name: "Vue Server",
-            status: "Up"
+            status: "Up",
+            description: "This service hosts projects made in Vue."
         },
         {
             name: "React Server",
-            status: "Up"
+            status: "Up",
+            description: "This service hosts projects made in React."
         },
         {
             name: "Serverless API",
-            status: "Down"
+            status: "Down",
+            description: "This service hosts serverless APIs made in Node.js."
         },
         {
             name: "PHP Server",
-            status: "Up"
+            status: "Up",
+            description: "This service hosts projects made in PHP."
         }
     ];
 
@@ -58,16 +128,19 @@ function getProjects(){
             name: "E-commerce Site",
             serviceUsed: "Vue Server",
             status: "Up",
+            description: "This project is an e-commerce site made in Vue."
         },
         {
             name: "Database Manager",
             serviceUsed: "PHP Server",
-            status: "Down"
+            status: "Down",
+            description: "This project is a database manager made in PHP."
         },
         {
             name: "Tetris Game",
             serviceUsed: "React Server",
-            status: "Up"
+            status: "Up",
+            description: "This project is a Tetris game made in React."
         }
     ];
 
@@ -192,19 +265,32 @@ function updateServicesTable(table, services) {
 
             if(!isDashboard) {
                 const td2 = document.createElement('td');
-                td2.classList.add("bg-transparent", "d-flex", "gap-2");
+                td2.classList.add("bg-transparent");
+
+                const button0 = document.createElement('button');
+                button0.classList.add("btn", "btn-secondary");
+                button0.appendChild(createInfoIcon());
+                button0.title = "Info";
+                button0.addEventListener('click', () => alert(`Description for '${service.name}': \n${service.description}`));
 
                 const button1 = document.createElement('button');
                 button1.classList.add("btn", "btn-primary");
-                button1.textContent = "Start/stop";
+                if(service.status === "Up") {
+                    button1.appendChild(createStopIcon());
+                    button1.title = "Stop";
+                } else {
+                    button1.appendChild(createStartIcon());
+                    button1.title = "Start";
+                }
                 button1.addEventListener('click', () => toggleServiceStatus(index));
                 
                 const button2 = document.createElement('button');
                 button2.classList.add("btn", "btn-danger");
-                button2.textContent = "Delete";
+                button2.appendChild(createTrashIcon());
+                button2.title = "Delete";
                 button2.addEventListener('click', () => deleteService(index));
 
-                td2.append(button1, button2);
+                td2.append(button0, button1, button2);
                 tr.appendChild(td2);
             }
 
@@ -290,19 +376,32 @@ function updateProjectsTable(table, projects) {
 
             if(!isDashboard) {
                 const td3 = document.createElement('td');
-                td3.classList.add("bg-transparent", "d-flex", "gap-2");
+                td3.classList.add("bg-transparent");
+
+                const button0 = document.createElement('button');
+                button0.classList.add("btn", "btn-secondary");
+                button0.appendChild(createInfoIcon());
+                button0.title = "Info";
+                button0.addEventListener('click', () => alert(`Description for '${project.name}': \n${project.description}`));
                 
                 const button1 = document.createElement('button');
                 button1.classList.add("btn", "btn-primary");
-                button1.textContent = "Start/stop";
+                if(project.status === "Up") {
+                    button1.appendChild(createStopIcon());
+                    button1.title = "Stop";
+                } else {
+                    button1.appendChild(createStartIcon());
+                    button1.title = "Start";
+                }
                 button1.addEventListener('click', () => toggleProjectStatus(index));
                 
                 const button2 = document.createElement('button');
                 button2.classList.add("btn", "btn-danger");
-                button2.textContent = "Delete";
+                button2.appendChild(createTrashIcon());
+                button2.title = "Delete";
                 button2.addEventListener('click', () => deleteProject(index));
 
-                td3.append(button1, button2);
+                td3.append(button0, button1, button2);
                 tr.appendChild(td3);
             }
 
@@ -365,8 +464,11 @@ async function main() {
 
             const name = formData.get('name');
 
+            const description = formData.get('description');
+
             services.push({
                 name,
+                description,
                 status: "Up"
             });
 
@@ -384,11 +486,12 @@ async function main() {
 
             const name = formData.get('name');
             const serviceUsed = services[Number(formData.get('service'))].name;
-
+            const description = formData.get('description');
 
             projects.push({
                 name,
                 serviceUsed,
+                description,
                 status: "Up"
             });
 
