@@ -15,6 +15,20 @@
 </head>
 
 <body class="d-flex vw-100 bg-dark" data-bs-theme="dark">
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-describedby="modal-body" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLabel">About Service</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <aside
         class="position-relative bg-dark text-light border-end border-secondary me-3 overflow-y-visible flex-shrink-0">
         <nav class="d-flex flex-column justify-content-between vh-100">
@@ -93,9 +107,10 @@
         </noscript>
 
         <div class="row row-gap-2 column-gap-3 flex-xl-nowrap mx-2">
-            <div class="card col-xl-8 g-0">
-                <div class="card-header">
+            <div class="card flex-grow-10 g-0" style="flex-basis: 0; min-width: 50ch;">
+                <div class="card-header d-flex justify-content-between">
                     <h4 class="mt-2">Services List</h4>
+                    <button class="btn btn-success" id="new-service">New service</button>
                 </div>
                 <div class="card-body position-relative p-0 p-lg-3">
                     <div class="w-100 overflow-auto">
@@ -107,15 +122,20 @@
                     </div>
                 </div>
             </div>
-            <div class="card col-xl-4 g-0 my-5 my-xl-0">
+            <div class="card flex-grow-1 g-0" style="flex-basis: fit-content;">
                 <div class="card-header">
-                    <h4 class="mt-2">Add new service</h4>
+                    <h4 class="mt-2" id="service-form-title">Add Service</h4>
                 </div>
                 <div class="card-body">
                     <form id="service-form">
                         <div class="mb-3">
                             <label for="inputName" class="form-label">Service Name</label>
                             <input type="text" placeholder="My New Service" class="form-control" name="name" id="inputName" minlength="5" maxlength="255" required>
+                        </div>
+                        <input type="hidden" id="service-form-index" name="index">
+                        <div class="mb-3">
+                            <label for="inputDesc" class="form-label">Release Date</label>
+                            <input type="date" class="form-control" name="releaseDate" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputDesc" class="form-label">Description</label>

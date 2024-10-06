@@ -49,3 +49,19 @@ nav .dropdown li:hover {
 form {
     max-width: 60ch;
 }
+
+#modal-body {
+    white-space: pre-wrap;
+}
+
+textarea {
+    max-height: 12em;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+.flex-grow-10 {
+    flex-grow: 10;
+}
