@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+include './internal/connection.php';
+
+$offset = $_GET['offset'];
+
+if (!isset($offset)) {
+    $offset = "0";
+}
+
+$result = $connection->execute_query('SELECT * FROM projects LIMIT 50 OFFSET ?', [$offset]);
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
