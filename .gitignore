@@ -1,3 +1,5 @@
 .vscode
 ~*
 *gitignore-me*
+.env
+vendor/
