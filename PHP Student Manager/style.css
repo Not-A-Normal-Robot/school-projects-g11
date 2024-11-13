@@ -1,0 +1,172 @@
+:root {
+    color-scheme: dark light;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body > .inner {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    
+    padding-inline: 1em;
+    padding-block-end: 2em;
+    background-color: #44444455;
+    border-radius: 1.5em;
+    border: 0.15em solid #66666688;
+    box-shadow: 0 0 3em 0.25em #66666639;
+}
+
+br {
+    margin-bottom: 3em;
+}
+
+table.students > thead > tr {
+    background-color: #66666666;
+}
+
+table.students > tbody > tr:nth-child(even) {
+    background-color: #44444455;
+}
+
+table.students th,
+table.students td {
+    border: 0.1em solid #66666688;
+    padding: 0.5em 2ch;
+}
+
+table.students {
+    width: fit-content;
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+form.add {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 0.5em;
+    padding: 1em;
+    border: 0.1em solid #66666688;
+    border-radius: 0.5em;
+}
+
+form.add .grid {
+    display: grid;
+    width: fit-content;
+    gap: 0.5em 2ch;
+    grid-template-columns: 1fr 2fr;
+}
+
+form.edit {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: auto;
+    gap: 0.5em;
+    padding: 1em;
+}
+
+form.edit .grid {
+    display: grid;
+    width: fit-content;
+    gap: 0.5em 2ch;
+    grid-template-columns: 1fr 2fr;
+    padding-block: 1em;
+}
+
+form.edit .row {
+    gap: 1ch;
+    width: 100%;
+}
+
+form.edit h2 {
+    margin-block: 0.25em;
+}
+
+form.edit .row > * {
+    flex-grow: 1;
+}
+
+form.edit a > button {
+    width: 100%;
+}
+
+form.edit button {
+    padding-block: 0.5em;
+}
+
+form.delete {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+form.delete .row {
+    gap: 1ch;
+}
+
+form.delete .row > * {
+    flex-grow: 1;
+}
+
+form.delete a > button {
+    width: 100%;
+}
+
+form.delete p {
+    margin: 0;
+}
+
+form.delete button {
+    padding-block: 0.5em;
+}
+
+.center-text {
+    text-align: center;
+}
+
+h3 {
+    margin: 0;
+}
+
+.visually-hidden {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+table button {
+    padding-block: 0.5em 0.25em;
+    padding-inline: 0.5em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

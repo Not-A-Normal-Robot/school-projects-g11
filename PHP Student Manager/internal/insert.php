@@ -1,6 +1,4 @@
 <?php
-header('Location: /index.php');
-
 $nama = $_POST['nama'];
 $kelas = $_POST['kelas'];
 $nomor = $_POST['nomor'];
@@ -24,3 +22,6 @@ $success = $stmt->execute();
 if (!$success) {
     die("Failed to insert student into table (/internal/insert.php): " . mysqli_stmt_error($stmt));
 }
+
+echo 'Success!';
+header('Location: /index.php');

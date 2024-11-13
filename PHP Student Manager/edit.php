@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 <?php
 $raw_id = $_GET['id'];
 
@@ -39,70 +45,11 @@ $name = $student[0];
 $class = $student[1];
 $index = $student[2];
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mengubah Biodata <?= $name ?> dari kelas <?= $class ?></title>
-    <style>
-        :root {
-            color-scheme: dark light;
-        }
-
-        body {
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            min-height: 100%;
-            min-height: 100vh;
-            min-height: 100dvh;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: fit-content;
-            max-height: fit-content;
-            margin: auto;
-            gap: 0.5em;
-            padding: 1em;
-            border: 0.1em solid white;
-        }
-
-        form .grid {
-            display: grid;
-            width: fit-content;
-            gap: 0.5em 2ch;
-            grid-template-columns: 1fr 2fr;
-        }
-
-        .center-text {
-            text-align: center;
-        }
-
-        h3 {
-            margin: 0;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: row;
-            gap: 1ch;
-        }
-        .row > * {
-            flex-grow: 1;
-        }
-
-        a > button {
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <form action="internal/edit.php" method="post">
-        <h3 class="center-text">Ubah Biodata Siswa</h3>
+    <form class="edit inner" action="internal/edit.php" method="post">
+        <h2 class="center-text">Ubah Biodata Siswa</h2>
         <input type="hidden" name="id" value="<?= $id ?>">
         <div class="grid">
             <label for="name">Nama</label>

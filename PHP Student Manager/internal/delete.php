@@ -1,6 +1,4 @@
 <?php
-header('Location: /index.php');
-
 $raw_id = $_GET['id'];
 
 include './connection.php';
@@ -22,3 +20,5 @@ $success = $stmt->execute();
 if (!$success) {
     die("Failed to insert student into table (/internal/delete.php): " . mysqli_stmt_error($stmt));
 }
+
+header('Location: /index.php');

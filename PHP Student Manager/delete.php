@@ -46,7 +46,7 @@ $index = $student[2];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konfirmasi Hapus Biodata Siswa</title>
-    <style>
+    <!-- <style>
         :root {
             color-scheme: dark light;
         }
@@ -95,11 +95,12 @@ $index = $student[2];
         ul {
             margin-top: 0;
         }
-    </style>
+    </style> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="internal/delete.php">
-        <h3 class="center-text">Konfirmasi Hapus</h3>
+    <form class="delete inner" action="internal/delete.php">
+        <h2 class="center-text">Konfirmasi Hapus</h2>
         <p>Apakah Anda yakin ingin menghapus biodata siswa berikut?</p>
         <ul>
             <li>Nama: <?= $name ?></li>
