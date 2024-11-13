@@ -84,11 +84,14 @@
             <h3 class="center-text">Tambah Siswa Baru</h3>
             <div class="grid">
                 <label for="name">Nama</label>
-                <input id="name" name="nama" type="text" minlength="1" maxlength="255" required placeholder="John Doe">
+                <input id="name" name="nama" type="text" minlength="1"
+                    maxlength="255" required placeholder="John Doe">
                 <label for="class">Kelas</label>
-                <input id="class" name="kelas" type="text" minlength="1" maxlength="255" required placeholder="10 AKL 1">
+                <input id="class" name="kelas" type="text" minlength="1"
+                    maxlength="255" required placeholder="10 AKL 1">
                 <label for="index">Nomor Absen</label>
-                <input id="index" name="nomor" type="number" min="1" max="999" maxlength="3" required placeholder="42">
+                <input id="index" name="nomor" type="number" min="1" max="999"
+                    maxlength="3" required placeholder="42">
                 <label for="pfp">Gambar Profil</label>
                 <script>
                 function previewImage(event) {
@@ -97,7 +100,8 @@
                         alert("File is too big! Maximum size is 16 MB");
                         return;
                     }
-                    document.getElementById('preview').classList.toggle("hide", event.target.value.trim().length === 0);
+                    document.getElementById('preview').classList
+                        .toggle("hide", event.target.value.trim().length === 0);
                     let reader = new FileReader();
                     reader.onload = function() {
                         document.getElementById('preview')
@@ -106,7 +110,8 @@
                     reader.readAsDataURL(event.target.files[0]);
                 }
                 </script>
-                <input type="file" name="gambar" id="pfp" value="gambar" accept="image/*" onchange="previewImage(event)">
+                <input type="file" name="gambar" id="pfp" value="gambar"
+                    accept="image/*" onchange="previewImage(event)">
                 <div></div>
                 <img class="hide" id="preview" src="" alt="Profile picture preview">
             </div>

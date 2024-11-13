@@ -103,7 +103,7 @@ form.add button[type="submit"]:hover {
     border-color: transparent;
 }
 
-form.add img {
+form.add img, form.edit img {
     max-width: 256px;
     max-height: 256px;
     object-fit: contain;
@@ -223,6 +223,7 @@ form.delete button[type="button"]:hover {
 .profile img.pfp {
     width: 128px;
     height: 128px;
+    object-fit: contain;
 }
 
 .profile .back {

@@ -47,13 +47,13 @@ if (array_key_exists('gambar', $_FILES)) {
     $success = $stmt->bind_param('s', $name);
     
     if (!$success) {
-        die("Failed to bind prepared statement params (/internal/insert.php): " . mysqli_stmt_error($stmt));
+        die("Failed to bind prepared statement params (/internal/insert.php): $stmt->error");
     }
     
     $success = $stmt->execute();
     
     if (!$success) {
-        die("Failed to record image path into table (/internal/insert.php): " . mysqli_stmt_error($stmt));
+        die("Failed to record image path into table (/internal/insert.php): $stmt->error");
     }
 
     $idGambar = $connection->insert_id;

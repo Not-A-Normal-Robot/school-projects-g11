@@ -48,7 +48,7 @@ $index = $student[2];
     <title>Mengubah Biodata <?= $name ?> dari kelas <?= $class ?></title>
 </head>
 <body>
-    <form class="edit inner" action="internal/edit.php" method="post">
+    <form class="edit inner" action="internal/edit.php" method="post"  enctype="multipart/form-data">
         <h2 class="center-text">Ubah Biodata Siswa</h2>
         <input type="hidden" name="id" value="<?= $id ?>">
         <div class="grid">
@@ -70,6 +70,28 @@ $index = $student[2];
                 required placeholder="26"
                 value="<?= $index ?>"
             >
+            <script>
+                function previewImage(event) {
+                    if (event.target.files[0].size > 16777215) {
+                        event.target.value = "";
+                        alert("File is too big! Maximum size is 16 MB");
+                        return;
+                    }
+                    document.getElementById('preview').classList
+                        .toggle("hide", event.target.value.trim().length === 0);
+                    let reader = new FileReader();
+                    reader.onload = function() {
+                        document.getElementById('preview')
+                            .src = reader.result;
+                    }
+                    reader.readAsDataURL(event.target.files[0]);
+                }
+            </script>
+            <label for="pfp">Gambar Profil</label>
+            <input type="file" name="gambar" id="pfp" value="gambar"
+                accept="image/*" onchange="previewImage(event)">
+            <div></div>
+            <img class="hide" id="preview" src="" alt="Profile picture preview">
         </div>
         <div class="row">
             <button type="submit">Ubah</button>
