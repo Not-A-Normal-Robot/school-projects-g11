@@ -103,6 +103,12 @@ form.add button[type="submit"]:hover {
     border-color: transparent;
 }
 
+form.add img {
+    max-width: 256px;
+    max-height: 256px;
+    object-fit: contain;
+}
+
 form.edit {
     display: flex;
     flex-direction: column;
@@ -306,4 +312,8 @@ button.delete {
 
 button.delete:hover {
     color: red;
+}
+
+.hide {
+    display: none !important;
 }

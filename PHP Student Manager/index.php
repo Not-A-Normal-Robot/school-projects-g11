@@ -90,13 +90,25 @@
                 <label for="index">Nomor Absen</label>
                 <input id="index" name="nomor" type="number" min="1" max="999" maxlength="3" required placeholder="42">
                 <label for="pfp">Gambar Profil</label>
-                <input type="file" name="gambar" id="pfp" accept="image/jpeg">
-                <script>document.getElementById('pfp').onchange=function(){
-                    if (this.files[0].size > 16777215) {
-                        this.value = "";
+                <script>
+                function previewImage(event) {
+                    if (event.target.files[0].size > 16777215) {
+                        event.target.value = "";
                         alert("File is too big! Maximum size is 16 MB");
+                        return;
                     }
-                }</script>
+                    document.getElementById('preview').classList.toggle("hide", event.target.value.trim().length === 0);
+                    let reader = new FileReader();
+                    reader.onload = function() {
+                        document.getElementById('preview')
+                            .src = reader.result;
+                    }
+                    reader.readAsDataURL(event.target.files[0]);
+                }
+                </script>
+                <input type="file" name="gambar" id="pfp" value="gambar" accept="image/*" onchange="previewImage(event)">
+                <div></div>
+                <img class="hide" id="preview" src="" alt="Profile picture preview">
             </div>
             <button class="stretch-x" type="submit">Tambah</button>
         </form>

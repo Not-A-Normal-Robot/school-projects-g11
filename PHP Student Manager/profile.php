@@ -48,15 +48,36 @@ $photoUrl = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvM
 
 if (isset($photoId)) {
     $imgResult = $connection->execute_query(
-        "SELECT image, id FROM `Images` WHERE id = ?",
+        "SELECT image FROM `Images` WHERE id = ?",
         [$photoId]
     );
 
-    $imgData = $imgResult->fetch_array()[0];
+    $rawPhotoUrl = $imgResult->fetch_array()[0];
+    $safe = true;
+    
+    // check photo url
+    if (strpos($photoUrl, '"') !== false) {
+        $safe = false;
+    }
 
-    if ($imgData) {
-        $b64Img = base64_encode($imgData);
-        $photoUrl = "data:image/jpeg;base64,$base64Image";
+    if (strpos($photoUrl, "'") !== false) {
+        $safe = false;
+    }
+
+    if (strpos($photoUrl, '\\') !== false) {
+        $safe = false;
+    }
+
+    if (strpos($photoUrl, '>') !== false) {
+        $safe = false;
+    }
+
+    if (strpos($photoUrl, '<') !== false) {
+        $safe = false;
+    }
+
+    if ($safe) {
+        $photoUrl = "/data/img/$rawPhotoUrl";
     }
 }
 ?>

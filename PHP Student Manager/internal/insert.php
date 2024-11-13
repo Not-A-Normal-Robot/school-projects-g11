@@ -1,13 +1,28 @@
 <?php
 include './connection.php';
 
+function generateUUID() {
+    if (function_exists('com_create_guid')) {
+        return trim(com_create_guid(), '{}');
+    } else {
+        return sprintf(
+            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff) | 0x4000,
+            mt_rand(0, 0x3fff) | 0x8000,
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+        );
+    }
+}
+
 if (!$connection) {
     die("Failed to connect to DB: " . mysqli_connect_error());
 }
-
 $idGambar = null;
 
 if (array_key_exists('gambar', $_FILES)) {
+    $namaGambar = $_FILES['gambar']['name'];
     $gambar = $_FILES['gambar']['tmp_name'];
     $size = $_FILES['gambar']['size'];
     
@@ -18,20 +33,27 @@ if (array_key_exists('gambar', $_FILES)) {
             <a href=\"index.php\">Return</a>"
         );
     }
+
+    $name = generateUUID();
     
-    $dataGambar = file_get_contents($gambar);
+    {
+        $arr = explode('.', $namaGambar);
+        $name .= '.' . strtolower(end($arr));
+    }
+
+    move_uploaded_file($_FILES['gambar']['tmp_name'], "../data/img/$name");
 
     $stmt = $connection->prepare('INSERT INTO `Images` (image) VALUES (?)');
-    $success = $stmt->bind_param('b', $dataGambar);
+    $success = $stmt->bind_param('s', $name);
     
     if (!$success) {
         die("Failed to bind prepared statement params (/internal/insert.php): " . mysqli_stmt_error($stmt));
     }
-
+    
     $success = $stmt->execute();
-
+    
     if (!$success) {
-        die("Failed to insert image into table (/internal/insert.php): " . mysqli_stmt_error($stmt));
+        die("Failed to record image path into table (/internal/insert.php): " . mysqli_stmt_error($stmt));
     }
 
     $idGambar = $connection->insert_id;
