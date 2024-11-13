@@ -50,6 +50,14 @@
                         <td><?= $row[3] ?></td>
                         <td>
                             <div class="actions">
+                                <a href="/profile.php?id=<?= $row[0] ?>" title="Lihat profil">
+                                    <button class="profile" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                                        </svg>
+                                    </button>
+                                </a>
                                 <a href="/edit.php?id=<?= $row[0] ?>" title="Ubah">
                                     <button class="edit" type="button">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -72,7 +80,7 @@
             </tbody>
         </table>
         <br>
-        <form class="add" action="internal/insert.php" method="post">
+        <form class="add" action="internal/insert.php" method="post" enctype="multipart/form-data">
             <h3 class="center-text">Tambah Siswa Baru</h3>
             <div class="grid">
                 <label for="name">Nama</label>
@@ -81,6 +89,14 @@
                 <input id="class" name="kelas" type="text" minlength="1" maxlength="255" required placeholder="10 AKL 1">
                 <label for="index">Nomor Absen</label>
                 <input id="index" name="nomor" type="number" min="1" max="999" maxlength="3" required placeholder="42">
+                <label for="pfp">Gambar Profil</label>
+                <input type="file" name="gambar" id="pfp" accept="image/jpeg">
+                <script>document.getElementById('pfp').onchange=function(){
+                    if (this.files[0].size > 16777215) {
+                        this.value = "";
+                        alert("File is too big! Maximum size is 16 MB");
+                    }
+                }</script>
             </div>
             <button class="stretch-x" type="submit">Tambah</button>
         </form>

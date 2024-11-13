@@ -214,6 +214,38 @@ form.delete button[type="button"]:hover {
     border-color: transparent;
 }
 
+.profile img.pfp {
+    width: 128px;
+    height: 128px;
+}
+
+.profile .back {
+    width: 100%;
+}
+
+.profile ul {
+    min-width: 12em;
+}
+
+.profile .back {
+    margin-block-start: 2em;
+}
+
+.profile .back > button {
+    width: 100%;
+    padding-block: 0.5em;
+    background-color: #44444455;
+    border: 0.15em solid #44444455;
+    border-radius: 0.5em;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+.profile .back > button:hover {
+    background-color: #444444BB;
+    border-color: transparent;
+}
+
 .center-text {
     text-align: center;
 }
@@ -238,6 +270,18 @@ table button {
 .row {
     display: flex;
     flex-direction: row;
+}
+
+button.profile {
+    background: none;
+    color: white;
+    border: 0 none transparent;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+button.profile:hover {
+    color: #237845;
 }
 
 button.edit {
