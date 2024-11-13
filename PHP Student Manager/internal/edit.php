@@ -39,7 +39,7 @@ if (!$success) {
     die("Failed to insert student into table (/internal/edit.php): " . mysqli_stmt_error($stmt));
 }
 
-if (array_key_exists('gambar', $_FILES)) {
+if (array_key_exists('gambar', $_FILES) && $_FILES['gambar']['name'] !== "") {
     $gambar = $_FILES['gambar'];
 
     if ($gambar['size'] > 16777215) {
@@ -76,7 +76,7 @@ if (array_key_exists('gambar', $_FILES)) {
         $success = unlink("../data/img/$picturePath");
 
         if (!$success) {
-            die("Failed to delete old pfp file (/internal/edit.php)");
+            echo "Failed to delete old pfp file (/internal/edit.php)";
         }
     
         $success = move_uploaded_file(
@@ -85,7 +85,7 @@ if (array_key_exists('gambar', $_FILES)) {
         );
         
         if (!$success) {
-            die("Failed to move uploaded file to update old pfp (/internal/edit.php)");
+            echo "Failed to move uploaded file to update old pfp (/internal/edit.php)";
         }
     } else {
         // TODO: Insert image

@@ -21,7 +21,7 @@ if (!$connection) {
 }
 $idGambar = null;
 
-if (array_key_exists('gambar', $_FILES)) {
+if (array_key_exists('gambar', $_FILES) && $_FILES['gambar']['name'] !== "") {
     $namaGambar = $_FILES['gambar']['name'];
     $gambar = $_FILES['gambar']['tmp_name'];
     $size = $_FILES['gambar']['size'];
