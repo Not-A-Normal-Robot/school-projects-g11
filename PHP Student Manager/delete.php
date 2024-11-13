@@ -109,7 +109,7 @@ $index = $student[2];
         </ul>
         <input type="hidden" name="id" value="<?= $id ?>">
         <div class="row">
-            <button type="submit">Iya</button>
+            <button type="submit">Hapus</button>
             <a href="/index.php">
                 <button type="button">Batal</button>
             </a>

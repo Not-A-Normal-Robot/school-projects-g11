@@ -26,12 +26,18 @@ body > .inner {
     justify-content: center;
     align-items: center;
     
-    padding-inline: 1em;
+    padding-inline: 2em;
     padding-block-end: 2em;
     background-color: #44444455;
     border-radius: 1.5em;
     border: 0.15em solid #66666688;
     box-shadow: 0 0 3em 0.25em #66666639;
+}
+
+body:has(form.delete) .inner {
+    background-color: #66333355;
+    border-color: #88444488;
+    box-shadow: 0 0 3em 0.25em #88444439;
 }
 
 br {
@@ -58,6 +64,11 @@ table.students {
     caption-side: bottom;
 }
 
+table.students .actions {
+    display: flex;
+    flex-direction: row;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -67,7 +78,7 @@ form.add {
     display: flex;
     flex-direction: column;
     max-width: fit-content;
-    gap: 0.5em;
+    gap: 1em;
     padding: 1em;
     border: 0.1em solid #66666688;
     border-radius: 0.5em;
@@ -78,6 +89,18 @@ form.add .grid {
     width: fit-content;
     gap: 0.5em 2ch;
     grid-template-columns: 1fr 2fr;
+}
+
+form.add button[type="submit"] {
+    background-color: #237845;
+    border: 0.15em solid #349A56;
+    border-radius: 0.5em;
+    transition: 250ms;
+}
+
+form.add button[type="submit"]:hover {
+    background-color: #349A56;
+    border-color: transparent;
 }
 
 form.edit {
@@ -115,7 +138,32 @@ form.edit a > button {
     width: 100%;
 }
 
-form.edit button {
+form.edit button[type="submit"] {
+    background-color: #234578;
+    border: 0.15em solid #34569A;
+    border-radius: 0.5em;
+    transition: 250ms;
+}
+
+form.edit button[type="submit"]:hover {
+    background-color: #34569A;
+    border-color: transparent;
+}
+
+form.edit button[type="button"] {
+    background-color: #44444455;
+    border: 0.15em solid #44444455;
+    border-radius: 0.5em;
+    transition: 250ms;
+}
+
+form.edit button[type="button"]:hover {
+    background-color: #444444BB;
+    border-color: transparent;
+}
+
+form button {
+    cursor: pointer;
     padding-block: 0.5em;
 }
 
@@ -141,8 +189,29 @@ form.delete p {
     margin: 0;
 }
 
-form.delete button {
-    padding-block: 0.5em;
+form.delete button[type="submit"] {
+    background-color: #992222;
+    border: 0.15em solid #CC3333;
+    border-radius: 0.5em;
+    transition: 250ms;
+}
+
+form.delete button[type="submit"]:hover {
+    background-color: #DD1111;
+    color: white;
+    border-color: transparent;
+}
+
+form.delete button[type="button"] {
+    background-color: #234578;
+    border: 0.15em solid #34569A;
+    border-radius: 0.5em;
+    transition: 250ms;
+}
+
+form.delete button[type="button"]:hover {
+    background-color: #34569A;
+    border-color: transparent;
 }
 
 .center-text {
@@ -169,4 +238,28 @@ table button {
 .row {
     display: flex;
     flex-direction: row;
+}
+
+button.edit {
+    background: none;
+    color: white;
+    border: 0 none transparent;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+button.edit:hover {
+    color: #234578;
+}
+
+button.delete {
+    background-color: transparent;
+    color: #AA3333;
+    border: 0 none transparent;
+    transition: 250ms;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    color: red;
 }
