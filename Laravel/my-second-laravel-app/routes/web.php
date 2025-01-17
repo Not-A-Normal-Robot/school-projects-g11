@@ -15,6 +15,14 @@ Route::get('/profile/{name}', function($name) {
     return "This is the story of a person named $formattedName. Lorem ipsum dolor sit amet.";
 });
 
-Route::get('/master-project', function() {
-    return view('m-project');
+Route::get('/projects', function() {
+    return view('projects');
+});
+
+Route::get('/services', function() {
+    return view('services');
+});
+
+Route::get('/admin', function() {
+    return view('dashboard');
 });
