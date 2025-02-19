@@ -26,3 +26,7 @@ Route::get('/services', function() {
 Route::get('/admin', function() {
     return view('dashboard');
 });
+
+// Route::get('/user_controller', [App\Http\Controllers\UserController::class, 'index']);
+// Route::post('/user_controller', [App\Http\Controllers\UserController::class, 'store']);
+Route::resource('/user_controller', App\Http\Controllers\UserController::class);
