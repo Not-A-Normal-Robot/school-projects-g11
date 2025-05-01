@@ -19,10 +19,7 @@ class TransactionDetailFactory extends Factory
     public function definition(): array
     {
         $transIds = Transaction::pluck('id')->toArray();
-        $items = Item::all()->toArray();
-        /**
-         * @var Item
-         */
+        $items = Item::all();
         $item = count($items) > 0 ?
             fake()->randomElement($items) :
             Item::factory()->createOne();
